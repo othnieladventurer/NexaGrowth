@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaGrowth | Digital Marketing Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9c27b0;
+            --secondary: #673ab7;
+            --accent: #ff5722;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--secondary) !important;
+        }
+
+        .navbar {
+            padding: 1.5rem 0;
+            transition: all 0.4s;
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0 0.7rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            padding: 8rem 0;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -25%;
+            width: 150%;
+            height: 5rem;
+            background: white;
+            transform: rotate(-2deg);
+            transform-origin: 50% 100%;
+        }
+
+        .hero-text {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-illustration {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .client-img {
+            width: 60px;       /* or any fixed size you want */
+            height: 60px;      /* same as width for perfect circle */
+            object-fit: cover; /* ensures image fills the circle without distortion */
+            border-radius: 50%;
+            display: block;    /* helps in some layouts */
+            }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.3);
+        }
+
+        .btn-outline-light {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            border-width: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: var(--gradient);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .service-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -40px auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            background: var(--gradient);
+            box-shadow: 0 10px 20px rgba(78, 84, 200, 0.3);
+        }
+
+        .stats-section {
+            background: var(--light);
+            padding: 5rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-item {
+            padding: 2rem;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(78, 84, 200, 0.1);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        /* Owl Carousel Navigation */
+        .owl-nav {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .owl-prev, .owl-next {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: rgba(156, 39, 176, 0.1) !important;
+            border-radius: 50% !important;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .owl-prev:hover, .owl-next:hover {
+            background: var(--primary) !important;
+            color: white !important;
+        }
+
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(156, 39, 176, 0.03), transparent);
+            transform: skewX(20deg);
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(156, 39, 176, 0.1);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding-top: 4rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            width: 100%;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-container, .feature-column, .testimonial-item {
+            perspective: 1000px;
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                padding: 5rem 0;
+            }
+
+            .hero-text {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-bullseye me-2"></i>NexaGrowth
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary ">Free Analysis</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1 class="display-4 fw-bold mb-4">Boost Your Online Growth</h1>
+                    <p class="lead mb-4">We help businesses elevate their brand presence and drive measurable results through innovative digital marketing solutions.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Get Started</a>
+                        <button class="btn btn-link text-white btn-lg">
+                            <span class="d-flex align-items-center">
+                                <i class="fas fa-play-circle me-2"></i> Watch Demo
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-illustration">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&w=600&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGlnaXRhbCUyMG1hcmtldGluZ3x8fHx8fDE2ODY0MTk0NjU&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source" alt="Digital Marketing" class="img-fluid floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center">
+                    <div class="section-title">
+                        <h2>Our Services</h2>
+                        <p class="text-muted">We provide comprehensive digital marketing solutions to help your business thrive online</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>SEO</h3>
+                            <p>Boost your search rankings with our proven SEO strategies and techniques.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>PPC Advertising</h3>
+                            <p>Target your audience effectively with our pay-per-click advertising campaigns.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>Email Marketing</h3>
+                            <p>Engage your audience with personalized email campaigns that convert.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>Social Media</h3>
+                            <p>Build brand loyalty and awareness through strategic social media management.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>Content Marketing</h3>
+                            <p>Create valuable content that attracts, engages, and converts your audience.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-body px-4 py-5 text-center">
+                            <h3>Analytics</h3>
+                            <p>Measure and analyze your marketing performance with our analytics solutions.</p>
+                            <a href="#" class="btn btn-link text-decoration-none">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">872+</div>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1462">1400+</div>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <p>Client Retention</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">15M+</div>
+                        <p>Leads Generated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features/About Section -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="mb-4">Why Your Business Needs Digital Marketing</h2>
+                    <p class="text-muted mb-4">In today's digital age, having a strong online presence is crucial for business success. Our tailored strategies help you reach your target audience effectively.</p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Targeted Reach</h4>
+                            <p class="text-muted">Precisely target your ideal customers with data-driven marketing strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Measurable Results</h4>
+                            <p class="text-muted">Track campaign performance in real-time with comprehensive analytics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Cost-Effective</h4>
+                            <p class="text-muted">Achieve higher ROI compared to traditional marketing methods.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <div class="floating">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&w=600&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFya2V0aW5nLGFuYWx5dGljc3x8fHx8fDE2ODY0MzE0NTQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source" alt="Marketing Analytics" class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title">
+                        <h2>Our Powerful Features</h2>
+                        <p class="text-muted">Maximize your online potential with our advanced digital marketing solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Advanced Analytics</h4>
+                        <p class="text-muted">Gain in-depth insights into your marketing performance with our comprehensive analytics dashboard.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI-Powered Optimization</h4>
+                        <p class="text-muted">Leverage artificial intelligence to continuously optimize your campaigns for maximum ROI.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-mail-bulk"></i>
+                        </div>
+                        <h4>Multi-Channel Campaigns</h4>
+                        <p class="text-muted">Seamlessly manage campaigns across all digital channels from a single platform.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Real-Time Reporting</h4>
+                        <p class="text-muted">Access up-to-the-minute performance data and custom reports anytime.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Competitor Analysis</h4>
+                        <p class="text-muted">Stay ahead of your competition with detailed insights into their strategies.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature-column">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h4>Precision Targeting</h4>
+                        <p class="text-muted">Reach the right audience with laser-focused targeting capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title">
+                        <h2>What Our Clients Say</h2>
+                        <p class="text-muted">Success stories from businesses we've helped transform</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel owl-theme testimonial-carousel">
+                <div class="item">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="mb-4">"Working with NexaGrowth has transformed our online presence. Our revenue has increased by 150% in just six months! Their team goes above and beyond."</p>
+                        <div class="d-flex align-items-center">
+                           
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">CEO, TechSolutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="mb-4">"The SEO results have been outstanding! Our organic traffic increased by 300% and we've secured prime positions for our most valuable keywords."</p>
+                        <div class="d-flex align-items-center">
+                           
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <p class="text-muted mb-0">Marketing Director, StyleHub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="mb-4">"Their PPC campaigns delivered exceptional ROI. We reduced customer acquisition costs by 40% while increasing conversions. Truly data-driven marketers!"</p>
+                        <div class="d-flex align-items-center">
+                           
+                            <div>
+                                <h5 class="mb-0">Emma Rodriguez</h5>
+                                <p class="text-muted mb-0">Founder, EcoGoods</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="mb-4">"Our social media engagement skyrocketed after implementing NexaGrowth's strategies. We've seen a 500% increase in meaningful interactions!"</p>
+                        <div class="d-flex align-items-center">
+                           
+                            <div>
+                                <h5 class="mb-0">David Wilson</h5>
+                                <p class="text-muted mb-0">CMO, FoodieTech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 contact-section">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title">
+                        <h2>Get in Touch</h2>
+                        <p class="text-muted">Ready to start your digital marketing journey? Contact us today!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card bg-white shadow-none border">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="mb-4">Request a Consultation</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Your Name">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Email Address">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Phone">
+                                </div>
+                                <div class="mb-4">
+                                    <select class="form-select form-control-lg">
+                                        <option selected>I'm interested in</option>
+                                        <option>SEO Services</option>
+                                        <option>PPC Advertising</option>
+                                        <option>Social Media Marketing</option>
+                                        <option>Email Marketing</option>
+                                        <option>Full Digital Strategy</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="form-control form-control-lg" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="mb-4">Contact Information</h3>
+                            <div class="d-flex mb-4">
+                                <div class="me-4">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Office Address</h5>
+                                    <p>123 Marketing Avenue, Suite 200<br>San Francisco, CA 94103</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <div class="me-4">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Phone Number</h5>
+                                    <p>+1 (800) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <div class="me-4">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Email Address</h5>
+                                    <p>hello@nexagrowth.com</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="me-4">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Working Hours</h5>
+                                    <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-3 text-white d-block" href="#">
+                        <i class="fas fa-bullseye me-2"></i>NexaGrowth
+                    </a>
+                    <p class="text-light opacity-75">We transform businesses through innovative digital marketing strategies that deliver measurable results and sustainable growth.</p>
+                    <div class="d-flex mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right me-2"></i> Services</a></li>
+                        <li><a href="#about"><i class="fas fa-angle-right me-2"></i> About Us</a></li>
+                        <li><a href="#features"><i class="fas fa-angle-right me-2"></i> Features</a></li>
+                        <li><a href="#contact"><i class="fas fa-angle-right me-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> SEO Optimization</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> Pay-Per-Click</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> Social Media</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> Content Marketing</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right me-2"></i> Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p class="text-light opacity-75">Subscribe to our newsletter for digital marketing tips and industry insights.</p>
+                    <div class="mb-3">
+                        <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+                    </div>
+                    <button class="btn btn-primary w-100">Subscribe Now</button>
+                </div>
+            </div>
+            <div class="copyright text-center py-4 mt-5">
+                <p class="mb-0 text-light opacity-75">© 2023 NexaGrowth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        // Navigation effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', function() {
+                if(window.scrollY > 100) {
+                    navbar.style.padding = '0.7rem 0';
+                    navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.padding = '1.5rem 0';
+                    navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                }
+            });
+
+            // Testimonial carousel
+            $(document).ready(function(){
+                $('.testimonial-carousel').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    nav: true,
+                    navText: [
+                        '<i class="fas fa-chevron-left"></i>',
+                        '<i class="fas fa-chevron-right"></i>'
+                    ],
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 3
+                        }
+                    }
+                });
+            });
+
+            // Count-up animation for statistics
+            const statElements = document.querySelectorAll('.stat-number');
+            
+            statElements.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/\D/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const countUp = () => {
+                    if(current < target) {
+                        current += increment;
+                        if(current > target) current = target;
+                        
+                        if(stat.textContent.includes('%')) {
+                            stat.textContent = Math.ceil(current) + '%';
+                        } else {
+                            stat.textContent = Math.ceil(current).toLocaleString();
+                        }
+                        
+                        requestAnimationFrame(countUp);
+                    }
+                };
+                
+                countUp();
+            });
+        });
+    </script>
+</body>
+</html>
